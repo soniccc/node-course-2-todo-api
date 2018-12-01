@@ -29,8 +29,8 @@ const {Todo} = require('./../server/models/todo');
 //     console.log('Todo By Id', todo);
 // }).catch((e) => console.log(e));
 
+//////////////////////////////////////////////////////////
 // CHALLENGE User.findByID
-
 
 const {User} = require('./../server/models/user');
 
@@ -47,6 +47,8 @@ User.findById(UserId).then((user) => {
         console.log(JSON.stringify(user, undefined, 2));
     }).catch((e) => console.log(e));
     
+//////////////////////////////////////////////////////////
+
 
 
 

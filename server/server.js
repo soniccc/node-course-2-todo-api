@@ -37,7 +37,7 @@ app.get('/todos/:id', (req, res) => {
     // res.send(req.params);
     var id = req.params.id;
     if (!ObjectID.isValid(id)) {
-        console.log('USER ID not valid');
+        //console.log('USER ID not valid');
         return res.status(404).send();
         
     };

@@ -101,6 +101,22 @@ app.listen(port, () => {
     console.log(`Started up at port ${port}`);
 });
 
+// POST /Users
+
+app.post('/users', (req, res) => {
+    var body = _.pick(req.body, ['email', 'password']);
+    var user = new User(body);
+
+    //console.log(req.body);
+    user.save().then(() => {
+        return user.generateAuthToken();
+    }).then((token) => {
+        res.header('x-auth', token).send(user)
+    }).catch((e) => {
+        res.status(400).send(e);
+    });
+}),
+
 module.exports = {app};  
 
 
